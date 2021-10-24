@@ -31,12 +31,14 @@ class MassDmCog(commands.Cog):
     async def massdmserver(self, ctx: commands.Context, *, message: str) -> None:
         """Send messages to members in the whole server"""
         
+        message = await ctx.send("Starting DMs")
         for member in ctx.guild.members:
             try:
+                await message.edit(f"Sending message to {member}")
                 await member.send(message.format(member=member, server=ctx.guild, sender=ctx.author))
             except discord.Forbidden:
                 ctx.send(f"Error sending a message to {member} due to insufficient permissions")
                 continue
             except discord.DiscordException:
-                ctx.send(f"Exception when sending a message to {member}. Please report this to my developers.")
+                ctx.send(f"Discord API exception when sending a message to {member}")
                 continue
