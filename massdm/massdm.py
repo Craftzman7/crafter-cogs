@@ -6,9 +6,10 @@ class BasicCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         
+    
+    @commands.command(name="massdmrole")
     @commands.guild_only()
     @commands.has_guild_permissions(manage_messages=True)
-    @commands.command()
     async def massdmrole(self, ctx: commands.Context, role: discord.Role, *, message: str) -> None:
         """Send messages to members with a specified role"""
         
@@ -22,10 +23,10 @@ class BasicCog(commands.Cog):
             except discord.DiscordException:
                 ctx.send(f"Exception when sending a message to {member}. Please report this to my developers.")
                 continue
-
-    @commands.guild_only()
+    
     @commands.has_guild_permissions(manage_messages=True)
-    @commands.command()
+    @commands.command(name="massdmserver")
+    @commands.guild_only()
     async def massdmserver(self, ctx: commands.Context, *, message: str) -> None:
         """Send messages to members in the whole server"""
         
