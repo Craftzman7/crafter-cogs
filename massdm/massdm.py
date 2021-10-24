@@ -18,7 +18,7 @@ class MassDmCog(commands.Cog):
 
         for member in [e for e in role.members]:
             try:
-                await message.edit(f content="Sending message to {member}", embed=None)
+                await message.edit(content=f"Sending message to {member}", embed=None)
                 await member.send(message.format(member=member, role=role, server=ctx.guild, sender=ctx.author))
             except discord.Forbidden:
                 ctx.send(f"Error sending a message to {member} due to insufficient permissions")
@@ -36,7 +36,7 @@ class MassDmCog(commands.Cog):
         message = await ctx.send("Starting DMs")
         for member in ctx.guild.members:
             try:
-                await message.edit(f content="Sending message to {member}", embed=None)
+                await message.edit(content=f"Sending message to {member}", embed=None)
                 await member.send(message.format(member=member, server=ctx.guild, sender=ctx.author))
             except discord.Forbidden:
                 ctx.send(f"Error sending a message to {member} due to insufficient permissions")
