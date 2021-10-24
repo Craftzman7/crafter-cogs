@@ -62,3 +62,16 @@ class Animal(commands.Cog):
                 await ctx.send(embed=embed)
         except Exception as e:
             await ctx.send("There was an exception. Please open an issue on Github")
+
+    @commands.command()
+    @commands.guild_only()
+    async def bird(self, ctx):
+        """Fetch a random picture of a bird"""
+        try:
+            async with self.session.get("https://some-random-api.ml/img/birb") as response:
+                data = await response.json()
+                embed = discord.Embed(title="Tweet tweet!", color=0x00ff00)
+                embed.set_image(url=data["link"])
+                await ctx.send(embed=embed)
+        except Exception as e:
+            await ctx.send("There was an exception. Please open an issue on Github")
