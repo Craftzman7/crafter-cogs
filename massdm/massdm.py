@@ -46,6 +46,7 @@ class MassDmCog(commands.Cog):
                 continue
             if member.bot:
                 await progress.edit(content=f"Skipping {member} (They are a bot)", embed=None)
+                continue
             try:
                 await progress.edit(content=f"Sending message to {member}", embed=None)
                 await member.send(message.format(member=member, server=ctx.guild, sender=ctx.author))
