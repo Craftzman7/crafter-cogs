@@ -15,9 +15,9 @@ class Animal(commands.Cog):
     async def Dog(self, ctx):
         """Fetch a random picture of a dog"""
         try:
-            async with self.session.get("https://api.thedogapi.com/v1/images/search?format=json")
-            as response:
+            async with self.session.get("https://api.thedogapi.com/v1/images/search?format=json") as response:
                 data = await response.json()
                 embed = discord.Embed(title="Woof!", color=0x00ff00)
                 embed.set_image(url=data[0]["url"])
                 await ctx.send(embed=embed)
+            
