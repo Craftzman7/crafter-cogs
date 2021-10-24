@@ -88,3 +88,6 @@ class Animal(commands.Cog):
                 await ctx.send(embed=embed)
         except Exception as e:
             await ctx.send("There was an exception. Please open an issue on Github")
+
+    def cog_unload(self):
+        self.bot.loop.create_task(self.session.close())
