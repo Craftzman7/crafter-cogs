@@ -33,7 +33,7 @@ class MassDmCog(commands.Cog):
         
         for member in ctx.guild.members:
             try:
-                await member.send(message.format(member=member, role=role, server=ctx.guild, sender=ctx.author))
+                await member.send(message.format(member=member, server=ctx.guild, sender=ctx.author))
             except discord.Forbidden:
                 ctx.send(f"Error sending a message to {member} due to insufficient permissions")
                 continue
