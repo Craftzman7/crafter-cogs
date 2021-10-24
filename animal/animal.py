@@ -13,7 +13,7 @@ class Animal(commands.Cog):
 
     @commands.command()
     @commands.guild_only()
-    async def Dog(self, ctx):
+    async def dog(self, ctx):
         """Fetch a random picture of a dog"""
         try:
             async with self.session.get("https://api.thedogapi.com/v1/images/search?format=json") as response:
