@@ -23,3 +23,16 @@ class Animal(commands.Cog):
                 await ctx.send(embed=embed)
         except Exception as e:
             await ctx.send("There was an exception. Please open an issue on Github") 
+
+    @commands.command()
+    @commands.guild_only()
+    async def cat(self, ctx):
+        """Fetch a random picture of a cat"""
+        try:
+            async with self.session.get("https://api.thecatapi.com/v1/images/search?format=json") as response:
+                data = await response.json()
+                embed = discord.Embed(title="Meow!", color=0x00ff00)
+                embed.set_image(url=data[0]["url"])
+                await ctx.send(embed=embed)
+        except Exception as e:
+            await ctx.send("There was an exception. Please open an issue on Github") 
