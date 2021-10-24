@@ -14,7 +14,7 @@ class MassDmCog(commands.Cog):
     async def massdmrole(self, ctx: commands.Context, role: discord.Role, *, message: str) -> None:
         """Send messages to members with a specified role"""
         
-        message = await ctx.send("Starting DMs")
+        progress = await ctx.send("Starting DMs")
 
         for member in [e for e in role.members]:
             try:
