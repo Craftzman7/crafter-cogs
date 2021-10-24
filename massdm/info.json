@@ -1,0 +1,10 @@
+{
+    "author": ["Crafter#0001"],
+    "description": "Message multiple users at once",
+    "install_msg": "Thanks for installing Mass DM. Please **DO NOT** abuse this cog.",
+    "permissions" : ["send_messages"],
+    "hidden": false,
+    "disabled": false,
+    "short": "Mass DM users",
+    "end_user_data_statement": "This cog does not store user data of any sort"
+}
