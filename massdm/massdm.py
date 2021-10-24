@@ -26,6 +26,8 @@ class MassDmCog(commands.Cog):
             except discord.DiscordException:
                 ctx.send(f"Exception when sending a message to {member}. Please report this to my developers.")
                 continue
+
+        await progress.edit(content="Done. Mass DMing complete")
     
     @commands.has_guild_permissions(manage_messages=True)
     @commands.command(name="massdmserver")
@@ -44,3 +46,5 @@ class MassDmCog(commands.Cog):
             except discord.DiscordException:
                 ctx.send(f"Discord API exception when sending a message to {member}")
                 continue
+
+        await progress.edit(content="Done. Mass DMing complete")
