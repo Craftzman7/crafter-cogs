@@ -36,3 +36,29 @@ class Animal(commands.Cog):
                 await ctx.send(embed=embed)
         except Exception as e:
             await ctx.send("There was an exception. Please open an issue on Github") 
+
+    @commands.command()
+    @commands.guild_only()
+    async def fox(self, ctx):
+        """Fetch a random picture of a fox"""
+        try:
+            async with self.session.get("https://randomfox.ca/floof/") as response:
+                data = await response.json()
+                embed = discord.Embed(title="What does the fox say?", color=0x00ff00)
+                embed.set_image(url=data["image"])
+                await ctx.send(embed=embed)
+        except Exception as e:
+            await ctx.send("There was an exception. Please open an issue on Github")
+
+    @commands.command()
+    @commands.guild_only()
+    async def lizard(self, ctx):
+        """Fetch a random picture of a lizard"""
+        try:
+            async with self.session.get("https://nekos.life/api/lizard") as response:
+                data = await response.json()
+                embed = discord.Embed(title="Lizard!", color=0x00ff00)
+                embed.set_image(url=data["url"])
+                await ctx.send(embed=embed)
+        except Exception as e:
+            await ctx.send("There was an exception. Please open an issue on Github")
