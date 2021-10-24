@@ -12,6 +12,7 @@ class Animal(commands.Cog):
         self.session = aiohttp.ClientSession()
 
     @commands.command()
+    @commands.guild_only()
     async def Dog(self, ctx):
         """Fetch a random picture of a dog"""
         try:
