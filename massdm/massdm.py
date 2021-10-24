@@ -26,10 +26,10 @@ class MassDmCog(commands.Cog):
                 await progress.edit(content=f"Sending message to {member}", embed=None)
                 await member.send(message.format(member=member, role=role, server=ctx.guild, sender=ctx.author))
             except discord.Forbidden:
-                ctx.send(f"Error sending a message to {member} due to insufficient permissions")
+                ctx.send(f"Error sending a message to {member} due to insufficient permissions", delete_after=3)
                 continue
             except discord.DiscordException:
-                ctx.send(f"Exception when sending a message to {member}. Please report this to my developers.")
+                ctx.send(f"Discord API exception sending a message to {member}. Please report this to my developers.", delete_after=3)
                 continue
 
         await progress.edit(content="Done. Mass DMing complete")
@@ -51,10 +51,10 @@ class MassDmCog(commands.Cog):
                 await progress.edit(content=f"Sending message to {member}", embed=None)
                 await member.send(message.format(member=member, server=ctx.guild, sender=ctx.author))
             except discord.Forbidden:
-                ctx.send(f"Error sending a message to {member} due to insufficient permissions")
+                ctx.send(f"Error sending a message to {member} due to insufficient permissions", delete_after=3)
                 continue
             except discord.DiscordException:
-                ctx.send(f"Discord API exception when sending a message to {member}")
+                ctx.send(f"Discord API exception when sending a message to {member}", delete_after=3)
                 continue
 
         await progress.edit(content="Done. Mass DMing complete")
