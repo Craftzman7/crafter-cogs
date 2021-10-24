@@ -31,8 +31,7 @@ class MassDmCog(commands.Cog):
     async def massdmserver(self, ctx: commands.Context, *, message: str) -> None:
         """Send messages to members in the whole server"""
         
-        role = ctx.guild.id
-        for member in [e for e in role.members]:
+        for member in ctx.guild.members:
             try:
                 await member.send(message.format(member=member, role=role, server=ctx.guild, sender=ctx.author))
             except discord.Forbidden:
