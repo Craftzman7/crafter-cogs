@@ -3,7 +3,7 @@
     "description": "Very basic example cog",
     "install_msg": "Thanks for installing basic. I hope you have a basic time.",
     "permissions" : ["send_messages"],
-    "hidden": false,
+    "hidden": true,
     "disabled": false,
     "short": "Basic example cog",
     "end_user_data_statement": "This cog does not store user data of any sort"
