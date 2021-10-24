@@ -1,0 +1,10 @@
+{
+    "author": ["Crafter#0001"],
+    "description": "Fetch pictures of a variety of animals",
+    "install_msg": "Thanks for installing the animal cog. I hope you enjoy the animal pictures.",
+    "permissions" : ["send_messages", "embed_links"],
+    "hidden": false,
+    "disabled": false,
+    "short": "Get animal pictures",
+    "end_user_data_statement": "This cog does not store user data of any sort"
+}
