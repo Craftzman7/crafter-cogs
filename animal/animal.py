@@ -4,7 +4,7 @@ import discord
 
 from redbot.core import commands
 
-class Basic(commands.Cog):
+class Animal(commands.Cog):
     """Cog for fetching pictures of animals"""
 
     def __init__(self, bot):
@@ -12,7 +12,7 @@ class Basic(commands.Cog):
         self.session = aiohttp.ClientSession()
 
     @commands.command()
-    async def basic(self, ctx):
+    async def Dog(self, ctx):
         """Fetch a random picture of a dog"""
         try:
             async with self.session.get("https://api.thedogapi.com/v1/images/search?format=json")

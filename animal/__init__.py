@@ -1,5 +1,5 @@
-from .basic import Basic
+from .animal import Animal
 
 
 def setup(bot):
-    bot.add_cog(Basic(bot))
+    bot.add_cog(Animal(bot))
