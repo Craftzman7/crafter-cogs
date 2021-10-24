@@ -1,6 +1,6 @@
 from redbot.core import commands
 
-class BasicCog(commands.Cog):
+class MassDmCog(commands.Cog):
     """A cog used for messaging all users in a server"""
 
     def __init__(self, bot):

@@ -1,4 +1,4 @@
-from .basic import BasicCog
+from .massdm import MassDmCog
 
 
 def setup(bot):
