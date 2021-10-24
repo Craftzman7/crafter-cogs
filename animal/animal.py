@@ -20,4 +20,5 @@ class Animal(commands.Cog):
                 embed = discord.Embed(title="Woof!", color=0x00ff00)
                 embed.set_image(url=data[0]["url"])
                 await ctx.send(embed=embed)
-            
+        except Exception as e:
+            await ctx.send("There was an exception. Please open an issue on Github") 
