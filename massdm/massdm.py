@@ -18,6 +18,7 @@ class MassDmCog(commands.Cog):
 
         for member in [e for e in role.members]:
             if member.id == ctx.author.id:
+                await ctx.send("I attempted to DM myself. Skipping", delete_after=3)
                 continue
             if member.bot:
                 await progress.edit(content=f"Skipping {member} (They are a bot)", embed=None)
@@ -43,6 +44,7 @@ class MassDmCog(commands.Cog):
         progress = await ctx.send("Starting DMs")
         for member in ctx.guild.members:
             if member.id == ctx.author.id:
+                await ctx.send("I attempted to DM myself. Skipping", delete_after=3)
                 continue
             if member.bot:
                 await progress.edit(content=f"Skipping {member} (They are a bot)", embed=None)
