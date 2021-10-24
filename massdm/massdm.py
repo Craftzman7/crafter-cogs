@@ -1,4 +1,5 @@
 from redbot.core import commands
+import discord
 
 class MassDmCog(commands.Cog):
     """A cog used for messaging all users in a server"""
