@@ -17,10 +17,11 @@ class MassDmCog(commands.Cog):
         progress = await ctx.send("Starting DMs")
 
         for member in [e for e in role.members]:
-            if member is ctx.author:
+            if member.id == ctx.author.id:
                 continue
             if member.bot:
                 await progress.edit(content=f"Skipping {member} (They are a bot)", embed=None)
+                continue
             try:
                 await progress.edit(content=f"Sending message to {member}", embed=None)
                 await member.send(message.format(member=member, role=role, server=ctx.guild, sender=ctx.author))
