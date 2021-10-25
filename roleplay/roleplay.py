@@ -54,7 +54,7 @@ class Roleplay(commands.Cog):
     
     @commands.command()
     @commands.guild_only()
-    async tickle(self, ctx, *, user: discord.Member):
+    async def tickle(self, ctx, *, user: discord.Member):
         """Tickle someone"""
         if user == ctx.author:
             return await ctx.send("You can't tickle your self")
