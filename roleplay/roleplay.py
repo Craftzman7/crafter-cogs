@@ -20,5 +20,3 @@ class Roleplay(commands.Cog):
             url = nekos.img("slap")
             embed.set_image(url=url)
             await ctx.send(embed=embed)
-
-        
