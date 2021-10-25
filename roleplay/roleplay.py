@@ -9,7 +9,7 @@ class Roleplay(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command
+    @commands.command()
     @commands.guild_only()
     async def slap(self, ctx, *, user: discord.Member):
         """Slap another user"""
