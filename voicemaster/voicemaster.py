@@ -80,3 +80,29 @@ class VoiceMaster(commands.Cog):
         except discord.Forbidden:
             return await ctx.send("I don't have permission to kick this member from the voice channel")
         await ctx.send(f"{member.mention} has been kicked from the voice channel")
+
+    @commands.command()
+    @commands.has_permissions(manage_channels=True)
+    @commands.guild_only()
+    async def vclock(self, ctx: commands.Context):
+        """Lock a voice channel"""
+        if not ctx.author.voice:
+            return await ctx.send("You are not in a voice channel")
+        try:
+            await ctx.author.voice.channel.edit(reason=f"{ctx.author} used vclock", user_limit=1)
+        except discord.Forbidden:
+            return await ctx.send("I don't have permission to lock this voice channel")
+        await ctx.send("This voice channel has been locked")
+
+    @commands.command()
+    @commands.has_permissions(manage_channels=True)
+    @commands.guild_only()
+    async def vcunlock(self, ctx: commands.Context):
+        """Lock a voice channel"""
+        if not ctx.author.voice:
+            return await ctx.send("You are not in a voice channel")
+        try:
+            await ctx.author.voice.channel.edit(reason=f"{ctx.author} used vcunlock", user_limit=0)
+        except discord.Forbidden:
+            return await ctx.send("I don't have permission to lock this voice channel")
+        await ctx.send("This voice channel has been unlocked")
