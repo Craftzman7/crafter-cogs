@@ -3,7 +3,7 @@
     "description": "Cog used for rolplaying with other Discord users",
     "install_msg": "Thanks for installing the roleplay cog",
     "permissions" : ["send_messages", "embed_links"],
-    "requirments": ["nekos.py"],
+    "requirements": ["nekos.py"],
     "hidden": true,
     "disabled": false,
     "short": "Cog used for roleplay",
