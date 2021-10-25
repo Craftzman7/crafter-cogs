@@ -37,3 +37,17 @@ class Roleplay(commands.Cog):
             await ctx.send(embed=embed)
         except:
             await ctx.send("An exception occured please open an issue on Github! {}".format(traceback.print_exc()))
+
+    @commands.command()
+    @commands.guild_only()
+    async def pat(self, ctx, *, user: discord.Member):
+        "Pat another user"
+        if user == ctx.author:
+            return await ctx.send("You can't pat your self")
+        try:
+            embed = discord.Embed(title="Pat pat", color=0x00ff00)
+            url = nekos.img("pat")
+            embed.set_image(url=url)
+            await ctx.send(embed=embed)
+        except:
+            await ctx.send("An exception occured please open an issue on Github! {}".format(traceback.print_exc()))
