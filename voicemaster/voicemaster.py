@@ -13,7 +13,7 @@ class VoiceMaster(commands.Cog):
     @commands.guild_only()
     async def mute(self, ctx: commands.Context, *, member: discord.Member):
         """Mute a member in a voice channel"""
-        if member.voice.self_mute:
+        if member.voice.mute:
             return await ctx.send("This member is already muted")
         try: 
             await member.edit(mute=True)
@@ -26,7 +26,7 @@ class VoiceMaster(commands.Cog):
     @commands.guild_only()
     async def unmute(self, ctx: commands.Context, *, member: discord.Member):
         """Unmute a member in a voice channel"""
-        if not member.voice.self_mute:
+        if not member.voice.mute:
             return await ctx.send("This member is not muted")
         try: 
             await member.edit(mute=False)
@@ -40,7 +40,7 @@ class VoiceMaster(commands.Cog):
     async def deafen(self, ctx: commands.Context, *, member: discord.Member):
         """Deafen a member in a voice channel"""
         try:
-            if member.voice.self_deaf:
+            if member.voice.deaf:
                 return await ctx.send("This member is already deafened")
         except discord.Forbidden:
             return await ctx.send("I don't have permission to deafen this member")
@@ -52,7 +52,7 @@ class VoiceMaster(commands.Cog):
     @commands.guild_only()
     async def undeafen(self, ctx: commands.Context, *, member: discord.Member):
         """Undeafen a member in a voice channel"""
-        if not member.voice.self_deaf:
+        if not member.voice.deaf:
             return await ctx.send("This member is not deafened")
         try:
             await member.edit(deaf=False)
