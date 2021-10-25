@@ -11,7 +11,7 @@ class VoiceMaster(commands.Cog):
     @commands.command()
     @commands.has_permissions(kick_members=True)
     @commands.guild_only()
-    async def mute(self, ctx: commands.Context, *, member: discord.Member):
+    async def vcmute(self, ctx: commands.Context, *, member: discord.Member):
         """Mute a member in a voice channel"""
         if not member.voice:
             return await ctx.send("This member is not in a voice channel")
@@ -26,7 +26,7 @@ class VoiceMaster(commands.Cog):
     @commands.command()
     @commands.has_permissions(kick_members=True)
     @commands.guild_only()
-    async def unmute(self, ctx: commands.Context, *, member: discord.Member):
+    async def vcunmute(self, ctx: commands.Context, *, member: discord.Member):
         """Unmute a member in a voice channel"""
         if not member.voice:
             return await ctx.send("This member is not in a voice channel")
