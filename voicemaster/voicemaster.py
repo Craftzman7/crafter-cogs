@@ -44,7 +44,7 @@ class VoiceMaster(commands.Cog):
                 return await ctx.send("This member is already deafened")
         except discord.Forbidden:
             return await ctx.send("I don't have permission to deafen this member")
-        await member.edit(deaf=True)
+        await member.edit(deafen=True)
         await ctx.send(f"{member.mention} has been deafened")
 
     @commands.command()
@@ -55,7 +55,7 @@ class VoiceMaster(commands.Cog):
         if not member.voice.deaf:
             return await ctx.send("This member is not deafened")
         try:
-            await member.edit(deaf=False)
+            await member.edit(deafen=False)
         except discord.Forbidden:
             return await ctx.send("I do not have the permissions to undeafen this member")
         await ctx.send(f"{member.mention} has been undeafened")
