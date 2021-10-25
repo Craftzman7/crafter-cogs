@@ -22,7 +22,7 @@ class Roleplay(commands.Cog):
             embed.set_image(url=url)
             await ctx.send(embed=embed)
         except:
-            await ctx.send("An excpetion occured please open an issue on Github! {}".format(traceback.print_exc()))
+            await ctx.send("An excpetion occured please open an issue on Github! Traceback: {}".format(traceback.print_exc()))
 
     @commands.command()
     @commands.guild_only()
@@ -36,7 +36,7 @@ class Roleplay(commands.Cog):
             embed.set_image(url=url)
             await ctx.send(embed=embed)
         except:
-            await ctx.send("An exception occured please open an issue on Github! {}".format(traceback.print_exc()))
+            await ctx.send("An exception occured please open an issue on Github! Traceback: {}".format(traceback.print_exc()))
 
     @commands.command()
     @commands.guild_only()
@@ -50,7 +50,7 @@ class Roleplay(commands.Cog):
             embed.set_image(url=url)
             await ctx.send(embed=embed)
         except:
-            await ctx.send("An exception occured please open an issue on Github! {}".format(traceback.print_exc()))
+            await ctx.send("An exception occured please open an issue on Github! Traceback: {}".format(traceback.print_exc()))
     
     @commands.command()
     @commands.guild_only()
@@ -64,7 +64,7 @@ class Roleplay(commands.Cog):
             embed.set_image(url=url)
             await ctx.send(embed=embed)
         except:
-            await ctx.send("An exception occured please open an issue on Github! {}".format(traceback.print_exc()))
+            await ctx.send("An exception occured please open an issue on Github! Traceback: {}".format(traceback.print_exc()))
 
     @commands.command()
     @commands.guild_only()
@@ -78,4 +78,4 @@ class Roleplay(commands.Cog):
             embed.set_image(url=url)
             await ctx.send(embed=embed)
         except:
-            await ctx.send("An exception occured please open an issue on Github! {}".format(traceback.print_exc()))
+            await ctx.send("An exception occured please open an issue on Github! Traceback: {}".format(traceback.print_exc()))
