@@ -55,12 +55,26 @@ class Roleplay(commands.Cog):
     @commands.command()
     @commands.guild_only()
     async def tickle(self, ctx, *, user: discord.Member):
-        """Tickle someone"""
+        """Tickle another user"""
         if user == ctx.author:
             return await ctx.send("You can't tickle your self")
         try:
             embed = discord.Embed(title="Aaaaaa that tickles", color=0x00ff00)
             url = nekos.img("tickle")
+            embed.set_image(url=url)
+            await ctx.send(embed=embed)
+        except:
+            await ctx.send("An exception occured please open an issue on Github! {}".format(traceback.print_exc()))
+
+    @commands.command()
+    @commands.guild_only()
+    async def poke(self, ctx, *, user: discord.Member):
+        """Poke another user"""
+        if user == ctx.author:
+            return await ctx.send("You can't poke your self")
+        try:
+            embed = discord.Embed(title="Ow", color=0x00ff00)
+            url = nekos.img("poke")
             embed.set_image(url=url)
             await ctx.send(embed=embed)
         except:
