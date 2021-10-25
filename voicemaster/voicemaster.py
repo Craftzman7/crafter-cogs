@@ -105,4 +105,4 @@ class VoiceMaster(commands.Cog):
             await ctx.author.voice.channel.edit(reason=f"{ctx.author} used vcunlock", user_limit=0)
         except discord.Forbidden:
             return await ctx.send("I don't have permission to lock this voice channel")
-        await ctx.send("This voice channel has been locked")
+        await ctx.send("This voice channel has been unlocked")
