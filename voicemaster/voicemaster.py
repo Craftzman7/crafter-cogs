@@ -15,7 +15,10 @@ class VoiceMaster(commands.Cog):
         """Mute a member in a voice channel"""
         if member.voice.self_mute:
             return await ctx.send("This member is already muted")
-        await member.edit(mute=True)
+        try: 
+            await member.edit(mute=True)
+        except discord.Forbidden:
+            return await ctx.send("I don't have permission to mute that member")
         await ctx.send(f"{member.mention} has been muted")
 
     @commands.command()
@@ -25,7 +28,10 @@ class VoiceMaster(commands.Cog):
         """Unmute a member in a voice channel"""
         if not member.voice.self_mute:
             return await ctx.send("This member is not muted")
-        await member.edit(mute=False)
+        try: 
+            await member.edit(mute=False)
+        except discord.Forbidden:
+            await ctx.send("I don't have permission to unmute that member")
         await ctx.send(f"{member.mention} has been unmuted")
 
     @commands.command()
@@ -33,8 +39,11 @@ class VoiceMaster(commands.Cog):
     @commands.guild_only()
     async def deafen(self, ctx: commands.Context, *, member: discord.Member):
         """Deafen a member in a voice channel"""
-        if member.voice.self_deaf:
-            return await ctx.send("This member is already deafened")
+        try:
+            if member.voice.self_deaf:
+                return await ctx.send("This member is already deafened")
+        except discord.Forbidden:
+            return await ctx.send("I don't have permission to deafen this member")
         await member.edit(deaf=True)
         await ctx.send(f"{member.mention} has been deafened")
 
@@ -45,5 +54,8 @@ class VoiceMaster(commands.Cog):
         """Undeafen a member in a voice channel"""
         if not member.voice.self_deaf:
             return await ctx.send("This member is not deafened")
-        await member.edit(deaf=False)
+        try:
+            await member.edit(deaf=False)
+        except discord.Forbidden:
+            return await ctx.send("I do not have the permissions to undeafen this member")
         await ctx.send(f"{member.mention} has been undeafened")
