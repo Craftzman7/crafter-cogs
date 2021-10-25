@@ -16,6 +16,8 @@ class Roleplay(commands.Cog):
         """Slap another user"""
         if user == ctx.author:
             return await ctx.send("You can't slap your self!")
+        if user.bot:
+            return await ctx.send("You can't interact with bots")
         try:
             embed = discord.Embed(title="Ouch!", color=0x00ff00)
             url = nekos.img("slap")
@@ -30,6 +32,8 @@ class Roleplay(commands.Cog):
         "Hug another user"
         if user == ctx.author:
             return await ctx.send("You can't hug your self")
+        if user.bot:
+            return await ctx.send("You can't interact with bots")
         try:
             embed = discord.Embed(title="Awwww", color=0x00ff00)
             url = nekos.img("hug")
@@ -44,6 +48,8 @@ class Roleplay(commands.Cog):
         "Pat another user"
         if user == ctx.author:
             return await ctx.send("You can't pat your self")
+        if user.bot:
+            return await ctx.send("You can't interact with bots")
         try:
             embed = discord.Embed(title="Pat pat", color=0x00ff00)
             url = nekos.img("pat")
@@ -58,6 +64,8 @@ class Roleplay(commands.Cog):
         """Tickle another user"""
         if user == ctx.author:
             return await ctx.send("You can't tickle your self")
+        if user.bot:
+            return await ctx.send("You can't interact with bots")
         try:
             embed = discord.Embed(title="Aaaaaa that tickles", color=0x00ff00)
             url = nekos.img("tickle")
@@ -72,9 +80,27 @@ class Roleplay(commands.Cog):
         """Poke another user"""
         if user == ctx.author:
             return await ctx.send("You can't poke your self")
+        if user.bot:
+            return await ctx.send("You can't interact with bots")
         try:
             embed = discord.Embed(title="Ow", color=0x00ff00)
             url = nekos.img("poke")
+            embed.set_image(url=url)
+            await ctx.send(embed=embed)
+        except:
+            await ctx.send("An exception occured please open an issue on Github! Traceback: {}".format(traceback.print_exc()))
+
+    @commands.command()
+    @commands.guild_only()
+    async def kiss(self, ctx, *, user: discord.Member):
+        """Kiss another user"""
+        if user == ctx.author:
+            return await ctx.send("You can't poke your self")
+        if user.bot:
+            return await ctx.send("You can't interact with bots")
+        try:
+            embed = discord.Embed(title="Awwww", color=0x00ff00)
+            url = nekos.img("kiss")
             embed.set_image(url=url)
             await ctx.send(embed=embed)
         except:
