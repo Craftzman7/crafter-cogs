@@ -3,7 +3,7 @@ import discord
 from redbot.core import commands
 
 class VoiceMaster(commands.Cog):
-    """My custom cog"""
+    """Voice channel moderation"""
 
     def __init__(self, bot):
         self.bot = bot
