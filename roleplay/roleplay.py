@@ -20,3 +20,5 @@ class Roleplay(commands.Cog):
             url = nekos.img("slap")
             embed.set_image(url=url)
             await ctx.send(embed=embed)
+        except:
+            await ctx.send("An excpetion occured please open an issue on Github!")
