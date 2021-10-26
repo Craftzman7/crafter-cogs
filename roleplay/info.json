@@ -4,7 +4,7 @@
     "install_msg": "Thanks for installing the roleplay cog",
     "permissions" : ["send_messages", "embed_links"],
     "requirements": ["nekos.py"],
-    "hidden": true,
+    "hidden": false,
     "disabled": false,
     "short": "Cog used for roleplay",
     "end_user_data_statement": "This cog does not store user data of any sort"
