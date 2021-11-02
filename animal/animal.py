@@ -83,7 +83,7 @@ class Animal(commands.Cog):
         try:
             async with self.session.get("https://some-random-api.ml/img/panda") as response:
                 data = await response.json()
-                embed = discord.Embed(title="Panda!", color=0x00ff00)
+                embed = discord.Embed(title="Awwww so cute.", color=0x00ff00)
                 embed.set_image(url=data["link"])
                 await ctx.send(embed=embed)
         except Exception as e:
