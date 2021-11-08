@@ -1,0 +1,10 @@
+{
+    "author": ["Crafter#0001"],
+    "description": "Autpost images to a channel of your choosing",
+    "install_msg": "Thanks for installing autpost.",
+    "permissions" : ["send_messages", "embed_links"],
+    "hidden": false,
+    "disabled": false,
+    "short": "Automatically post images",
+    "end_user_data_statement": "This cog stores the ID of the channels where images are sent"
+}
